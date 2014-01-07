@@ -12,7 +12,7 @@
   ],
   "version": "1.0.0",
   "license": "MIT",
-  "repository": "ZDroid/relrs",
+  "repository": "ZDroid/percent",
   "files": [
     "index.js"
   ],
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "jscs": "1.1.0",
-    "jshint": "2.4.0",
+    "jshint": "2.4.1",
     "mocha": "1.16.2"
   }
 }

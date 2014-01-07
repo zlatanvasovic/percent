@@ -1,0 +1,30 @@
+{
+  "name": "percent",
+  "author": "Zlatan Vasović",
+  "description": "Percent control done right",
+  "keywords": [
+    "percent",
+    "percents",
+    "percentage",
+    "math",
+    "calc",
+    "calculation"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "ZDroid/relrs",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "mocha && jshint *.js && jscs *.js"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "devDependencies": {
+    "jscs": "1.1.0",
+    "jshint": "2.4.0",
+    "mocha": "1.16.2"
+  }
+}

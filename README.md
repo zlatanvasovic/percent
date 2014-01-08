@@ -44,7 +44,7 @@ Adds percent sign to `thing`.
 
 Example: `percent.unsign('5%')`
 
-Removes percent sign(s) from `thing`.
+Removes percent sign(s) from `thing`, but only if `thing` is string.
 
 ### percent.valid(thing)
 

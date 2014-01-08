@@ -35,8 +35,9 @@ describe('percent.sign', function () {
 // Remove sign tests
 describe('percent.unsign', function () {
   it('should remove percent sign(s)', function () {
-    assert.equal(percent.unsign(' 5  %'), ' 5  ');
+    assert.equal(percent.unsign(' 5 % '), ' 5  ');
     assert.equal(percent.unsign('25 %%%'), '25 ');
+    assert.equal(percent.unsign(25), 25);
   });
 });
 

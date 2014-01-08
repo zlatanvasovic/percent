@@ -17,8 +17,11 @@ exports.sign = function (thing) {
 
 // Remove sign(s)
 exports.unsign = function (thing) {
-  if (thing.match(/%/g)) {
+  if (typeof thing === 'string' && thing.match(/%/g)) {
     return thing.replace(/%/g, '');
+  }
+  else {
+    return thing;
   }
 };
 

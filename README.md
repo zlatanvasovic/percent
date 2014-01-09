@@ -4,8 +4,6 @@
 
 Percent is npm module which gives you fine options to manage percentages.
 
-Licensed under the MIT License.
-
 ## Install
 
 With [npm](https://npmjs.org):

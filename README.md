@@ -9,7 +9,7 @@ Percent is npm module which gives you fine options to manage percentages.
 With [npm](https://npmjs.org):
 
 ```bash
-$ npm install --save percent
+$ npm install percent
 ```
 
 ## Example

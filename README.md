@@ -12,12 +12,24 @@ With [npm](https://npmjs.org):
 $ npm install percent
 ```
 
-## Example
+## Examples
+
+**Calculate percentage**
 
 ```javascript
 var percent = require('percent');
 
 console.log(percent.calc(5, 20, 0, false)); // => 25
+```
+
+**Validate percents**
+
+```javascript
+var percent = require('percent');
+
+if (percent.valid(5)) { // => true
+  console.log('It works!');
+}
 ```
 
 ## API

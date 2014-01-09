@@ -47,9 +47,9 @@ describe('percent.valid', function () {
     assert.equal(percent.valid(5), true);
     assert.equal(percent.valid(' 5 '), true);
     assert.equal(percent.valid(' 5 % '), true);
-    assert.equal(percent.valid('string'), undefined);
-    assert.equal(percent.valid([5, '%']), undefined);
-    assert.equal(percent.valid({'value': 6}), undefined);
-    assert.equal(percent.valid(function () {}), undefined);
+    assert.equal(percent.valid('string'), false);
+    assert.equal(percent.valid([5, '%']), false);
+    assert.equal(percent.valid({'value': 6}), false);
+    assert.equal(percent.valid(function () {}), false);
   });
 });

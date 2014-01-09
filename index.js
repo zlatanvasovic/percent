@@ -5,9 +5,7 @@ exports.calc = function (number, base, decimal, sign) {
   if (base === 0) {
     return null;
   }
-  else {
-    return (number / base * 100).toFixed(decimal) + (sign ? '%' : '');
-  }
+  return (number / base * 100).toFixed(decimal) + (sign ? '%' : '');
 };
 
 // Add sign
@@ -20,9 +18,7 @@ exports.unsign = function (thing) {
   if (typeof thing === 'string' && thing.match(/%/g)) {
     return thing.replace(/%/g, '');
   }
-  else {
-    return thing;
-  }
+  return thing;
 };
 
 // Percent validation
@@ -35,4 +31,5 @@ exports.valid = function (thing) {
       return true;
     }
   }
+  return false;
 };

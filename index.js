@@ -8,12 +8,12 @@ exports.calc = function (number, base, decimal, sign) {
   return (number / base * 100).toFixed(decimal) + (sign ? '%' : '');
 };
 
-// Add sign
+// Add percent sign
 exports.sign = function (thing) {
   return thing + '%';
 };
 
-// Remove sign(s)
+// Remove percent sign(s)
 exports.unsign = function (thing) {
   if (typeof thing === 'string' && thing.match(/%/g)) {
     return thing.replace(/%/g, '');

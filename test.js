@@ -28,7 +28,7 @@ describe('percent.calc', function () {
 describe('percent.sign', function () {
   it('should add percent sign', function () {
     assert.equal(percent.sign(5), '5%');
-    assert.equal(percent.sign(25), '25%');
+    assert.equal(percent.sign('25'), '25%');
   });
 });
 
@@ -49,7 +49,6 @@ describe('percent.valid', function () {
     assert.equal(percent.valid(' 5 % '), true);
     assert.equal(percent.valid('string'), false);
     assert.equal(percent.valid([5, '%']), false);
-    assert.equal(percent.valid({'value': 6}), false);
-    assert.equal(percent.valid(function () {}), false);
+    assert.equal(percent.valid({value: 6}), false);
   });
 });

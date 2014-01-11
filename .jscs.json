@@ -1,5 +1,4 @@
 {
-  "disallowEmptyBlocks": true,
   "disallowLeftStickedOperators": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
   "disallowMixedSpacesAndTabs": true,
   "disallowMultipleLineBreaks": true,

@@ -1,3 +1,7 @@
+/* global describe, it */
+
+'use strict';
+
 var percent = require('./index');
 var assert = require('assert');
 

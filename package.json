@@ -14,7 +14,8 @@
   "license": "MIT",
   "repository": "ZDroid/percent",
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE.md"
   ],
   "scripts": {
     "test": "mocha && jshint *.js && jscs *.js"

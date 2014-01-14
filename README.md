@@ -28,20 +28,20 @@ console.log(percent.calc(5, 20, 0, false)); // => 25
 var percent = require('percent');
 
 if (percent.valid(5)) { // => true
-  console.log('It works!');
+  console.log('5 is valid percent value');
 }
 ```
 
 **Compare percentages**
 
-```
+```javascript
 var percent = require('percent');
 
 a = '5%';
 b = 6;
 
 if (percent.lt(a, b)) { // => true
-  console.log('It\'s true!');
+  console.log('a is smaller than b');
 }
 ```
 

@@ -5,7 +5,7 @@
 var percent = require('./index');
 var assert = require('assert');
 
-// Calculation tests
+// Percent calculation tests
 describe('percent.calc', function () {
   it('should return right percent values', function () {
     assert.equal(percent.calc(5, 20, 0, false), 25);
@@ -28,26 +28,9 @@ describe('percent.calc', function () {
   });
 });
 
-// Append sign tests
-describe('percent.sign', function () {
-  it('should add percent sign', function () {
-    assert.equal(percent.sign(5), '5%');
-    assert.equal(percent.sign('25'), '25%');
-  });
-});
-
-// Remove sign tests
-describe('percent.unsign', function () {
-  it('should remove percent sign(s)', function () {
-    assert.equal(percent.unsign(' 5 % '), ' 5  ');
-    assert.equal(percent.unsign('25 %%%'), '25 ');
-    assert.equal(percent.unsign(25), 25);
-  });
-});
-
-// Validation tests
+// Percent validation tests
 describe('percent.valid', function () {
-  it('should check if a given parameter is a valid percent', function () {
+  it('should validate given argument as percent', function () {
     assert.equal(percent.valid(5), true);
     assert.equal(percent.valid(' 5 '), true);
     assert.equal(percent.valid(' 5 % '), true);
@@ -55,5 +38,66 @@ describe('percent.valid', function () {
     assert.equal(percent.valid([5, '%']), false);
     assert.equal(percent.valid({value: 6}), false);
     assert.equal(percent.valid(function () {}), false);
+  });
+});
+
+// Append sign tests
+describe('percent.sign', function () {
+  it('should add percent sign', function () {
+    assert.equal(percent.sign(5), '5%');
+    assert.equal(percent.sign('25'), '25%');
+  });
+  it('should ignore wrong values', function () {
+    assert.equal(percent.sign('25%'), '25%');
+    assert.deepEqual(percent.sign({sign: 6}), {sign: 6});
+  });
+});
+
+// Remove sign(s) tests
+describe('percent.unsign', function () {
+  it('should remove percent sign(s)', function () {
+    assert.equal(percent.unsign(' 5 % '), ' 5  ');
+    assert.equal(percent.unsign('25 %%%'), '25 ');
+  });
+  it('should ignore wrong values', function () {
+    assert.equal(percent.unsign(25), 25);
+    assert.deepEqual(percent.unsign([25, 25]), [25, 25]);
+  });
+});
+
+// Percent comparision tests
+describe('percent.lt', function () {
+  it('should check is the first argument smaller than second', function () {
+    assert.equal(percent.lt(5, 6), true);
+    assert.equal(percent.lt('5', '6'), true);
+    assert.equal(percent.lt('5%', 6), true);
+    assert.equal(percent.lt([], {}), false);
+  });
+});
+
+describe('percent.gt', function () {
+  it('should check is the first argument greater than second', function () {
+    assert.equal(percent.gt(6, 5), true);
+    assert.equal(percent.gt('6', '5'), true);
+    assert.equal(percent.gt('6%', 5), true);
+    assert.equal(percent.gt({}, {}), false);
+  });
+});
+
+describe('percent.eq', function () {
+  it('should check are the arguments equal', function () {
+    assert.equal(percent.eq(5, 5), true);
+    assert.equal(percent.eq('5', '5'), true);
+    assert.equal(percent.eq('5%', 5), true);
+    assert.equal(percent.eq([], []), false);
+  });
+});
+
+describe('percent.neq', function () {
+  it('should check are the arguments unequal', function () {
+    assert.equal(percent.neq(6, 5), true);
+    assert.equal(percent.neq('6', '5'), true);
+    assert.equal(percent.neq('6%', 5), true);
+    assert.equal(percent.neq(/i/g, /i/g), false);
   });
 });

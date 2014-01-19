@@ -2,7 +2,7 @@
 
 > Percent control done right
 
-Percent is npm module which gives you fine options to manage percentages.
+Percent is npm module which gives you fine options to control percentages.
 
 ## Installation
 

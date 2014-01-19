@@ -47,6 +47,10 @@ if (percent.lt(a, b)) { // => true
 
 ## API
 
+```javascript
+var percent = require('percent');
+```
+
 ### percent.calc(number, base, decimal, sign)
 
 Example: `percent.calc(5, 20, 0, false)`

@@ -51,12 +51,12 @@ if (percent.lt(a, b)) { // => true
 var percent = require('percent');
 ```
 
-### percent.calc(number, base, decimal, sign)
+### percent.calc(value, total, decimal, sign)
 
 Example: `percent.calc(5, 20, 0, false)`
 
-Calculates percent value from given number (`number`) and base number (`base`)
-with specified number of decimals (`decimal`).
+Calculates percent value from the given number (`value`) and total number
+(`total`) with specified number of decimals (`decimal`).
 
 `sign` is boolean which turns percent sign (`%`) addition. `percent.calc` will
 return percent value with percent sign if `sign` is `true`.

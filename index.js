@@ -1,11 +1,11 @@
 'use strict';
 
 // Percent calculation
-exports.calc = function (number, base, decimal, sign) {
-  if (base === 0) {
+exports.calc = function (value, total, decimal, sign) {
+  if (total === 0) {
     return null;
   }
-  return (number / base * 100).toFixed(decimal) + (sign ? '%' : '');
+  return (value / total * 100).toFixed(decimal) + (sign ? '%' : '');
 };
 
 // Percent validation

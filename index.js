@@ -30,7 +30,7 @@ exports.valid = function (thing) {
     return true;
   }
   if (typeof thing === 'string') {
-    if (thing.match(/^\s?\d+\s?$/) || thing.match(/^\s?\d+\s?%\s?$/)) {
+    if (thing.match(/^\s?\d+\s?%?\s?$/)) {
       return true;
     }
   }

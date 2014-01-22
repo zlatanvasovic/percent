@@ -16,7 +16,6 @@
   "requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch"],
   "requireDotNotation": true,
   "requireKeywordsOnNewLine": ["else"],
-  "requireLeftStickedOperators": [","],
   "requireOperatorBeforeLineBreak": ["?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
   "requireRightStickedOperators": ["!"],
   "requireSpaceAfterBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!=="],

@@ -9,7 +9,6 @@
   "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
   "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
   "disallowSpacesInsideArrayBrackets": true,
-  "disallowSpacesInsideObjectBrackets": true,
   "disallowSpacesInsideParentheses": true,
   "disallowTrailingWhitespace": true,
   "maximumLineLength": 80,

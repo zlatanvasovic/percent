@@ -17,9 +17,12 @@ describe('percent.calc', function () {
     assert.equal(percent.calc(50, 6, 2, false), 833.33);
   });
 
-  it('should be good with nulls', function () {
+  it('should be good with wrong values', function () {
+    assert.equal(percent.calc([], 5, 0, false), null);
     assert.equal(percent.calc(0, 5, 0, false), 0);
-    assert.equal(percent.calc(5, 0, 0, false), null);
+    assert.equal(percent.calc(5, 0, 0, false), 0);
+    assert.equal(percent.calc(NaN, 0, 0, false), 0);
+    assert.equal(percent.calc(Infinity, 5, 0, false), Infinity);
   });
 
   it('should return right percent values with percent sign', function () {

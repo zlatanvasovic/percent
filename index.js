@@ -2,9 +2,25 @@
 
 // Percent calculation
 exports.calc = function (value, total, decimal, sign) {
-  if (total === 0) {
+  var wrong = [NaN, Infinity, -Infinity];
+  var n;
+
+  if (typeof value !== 'number' ||
+      typeof total !== 'number' ||
+      typeof decimal !== 'number') {
     return null;
   }
+
+  if (total === 0) {
+    return 0;
+  }
+
+  for (n in wrong) {
+    if (value === n || total === n || decimal === n) {
+      return n;
+    }
+  }
+
   return (value / total * 100).toFixed(decimal) + (sign ? '%' : '');
 };
 
@@ -24,7 +40,7 @@ exports.valid = function (thing) {
 // Add percent sign
 exports.sign = function (thing) {
   if (typeof thing === 'number' || (typeof thing === 'string' &&
-  !thing.match(/%/g))) {
+                                    !thing.match(/%/g))) {
     return thing + '%';
   }
   return thing;

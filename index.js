@@ -48,10 +48,8 @@ exports.valid = function (thing) {
   if (typeof thing === 'number') {
     return true;
   }
-  if (typeof thing === 'string') {
-    if (thing.match(/^\s?\d+\s?%?\s?$/)) {
-      return true;
-    }
+  if (typeof thing === 'string' && thing.match(/^\s?\d+\s?%?\s?$/)) {
+    return true;
   }
   return false;
 };

@@ -5,21 +5,27 @@
 
 'use strict';
 
-// Percent calculation
+/*
+ * Percent calculation
+ */
+
 exports.calc = function (value, total, decimal, sign) {
   var wrong = [NaN, Infinity, -Infinity];
   var n;
 
+  // Avoid argument type problems
   if (typeof value !== 'number' ||
       typeof total !== 'number' ||
       typeof decimal !== 'number') {
     return null;
   }
 
+  // You can't divide by 0
   if (total === 0) {
     return 0;
   }
 
+  // Avoid wrong numbers
   for (n in wrong) {
     if (value === n || total === n || decimal === n) {
       return n;
@@ -29,7 +35,10 @@ exports.calc = function (value, total, decimal, sign) {
   return (value / total * 100).toFixed(decimal) + (sign ? '%' : '');
 };
 
-// Percent validation
+/*
+ * Percent validation
+ */
+
 exports.valid = function (thing) {
   if (typeof thing === 'number') {
     return true;
@@ -42,7 +51,10 @@ exports.valid = function (thing) {
   return false;
 };
 
-// Add percent sign
+/*
+ * Add percent sign
+ */
+
 exports.sign = function (thing) {
   if (typeof thing === 'number' || (typeof thing === 'string' &&
                                     !thing.match(/%/g))) {
@@ -51,7 +63,10 @@ exports.sign = function (thing) {
   return thing;
 };
 
-// Remove percent sign(s)
+/*
+ * Remove percent sign(s)
+ */
+
 exports.unsign = function (thing) {
   if (typeof thing === 'string' && thing.match(/%/g)) {
     return thing.replace(/%/g, '');
@@ -59,7 +74,10 @@ exports.unsign = function (thing) {
   return thing;
 };
 
-// Percent comparision
+/*
+ * Percent comparision
+ */
+
 exports.lt = function (l, t) {
   if (exports.valid(l) && exports.valid(t)) {
     if (exports.unsign(l) < exports.unsign(t)) {

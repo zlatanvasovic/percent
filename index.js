@@ -1,3 +1,8 @@
+/*!
+ * Percent npm package (http://git.io/percentjs)
+ * Licensed under the MIT license.
+ */
+
 'use strict';
 
 // Percent calculation

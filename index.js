@@ -20,7 +20,7 @@ exports.calc = function (value, total, decimal, sign) {
     return null;
   }
 
-  // You can't divide by 0
+  // It's impossible to divide by zero
   if (total === 0) {
     return 0;
   }

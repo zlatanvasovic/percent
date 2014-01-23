@@ -97,13 +97,13 @@ Check is the first argument greater than second.
 
 Example: `percent.eq('5%', 5)`
 
-Checks are the arguments equal.
+Checks are the arguments logically equal.
 
 ### percent.neq(ne, q)
 
 Example: `percent.neq('6%', 5)`
 
-Checks are the arguments unequal.
+Checks are the arguments logically unequal.
 
 ## License
 

@@ -13,6 +13,11 @@ exports.calc = function (value, total, decimal, sign) {
   var wrong = [NaN, Infinity, -Infinity];
   var n;
 
+  // Set defaults
+  if (sign === null) {
+    sign = false;
+  }
+
   // Avoid argument type problems
   if (typeof value !== 'number' ||
       typeof total !== 'number' ||

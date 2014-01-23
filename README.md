@@ -51,9 +51,9 @@ if (percent.lt(a, b)) { // => true
 var percent = require('percent');
 ```
 
-### percent.calc(value, total, decimal, sign)
+### percent.calc(value, total, decimal [, sign])
 
-Example: `percent.calc(5, 20, 0, false)`
+Example: `percent.calc(5, 20, 0)`
 
 Calculates percent value from the given number (`value`) and total number
 (`total`) with specified number of decimals (`decimal`).

@@ -59,7 +59,8 @@ Calculates percent value from the given number (`value`) and total number
 (`total`) with specified number of decimals (`decimal`).
 
 `sign` is boolean which turns percent sign (`%`) addition. `percent.calc` will
-return percent value with percent sign if `sign` is `true`.
+return percent value with percent sign if `sign` is `true` (it's false by
+default).
 
 ### percent.valid(thing)
 

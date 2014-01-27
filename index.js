@@ -25,7 +25,7 @@ exports.calc = function (value, total, decimal, sign) {
     return null;
   }
 
-  // It's impossible to divide by zero
+  // Don't divide by zero
   if (total === 0) {
     return 0;
   }

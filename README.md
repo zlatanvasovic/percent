@@ -16,7 +16,7 @@ $ npm install percent
 
 **Calculate percentage**
 
-```javascript
+```js
 var percent = require('percent');
 
 console.log(percent.calc(5, 20, 0, false)); // => 25
@@ -24,7 +24,7 @@ console.log(percent.calc(5, 20, 0, false)); // => 25
 
 **Validate percentage**
 
-```javascript
+```js
 var percent = require('percent');
 
 if (percent.valid(5)) { // => true
@@ -34,7 +34,7 @@ if (percent.valid(5)) { // => true
 
 **Compare percentages**
 
-```javascript
+```js
 var percent = require('percent');
 
 a = '5%';
@@ -47,7 +47,7 @@ if (percent.lt(a, b)) { // => true
 
 ## API
 
-```javascript
+```js
 var percent = require('percent');
 ```
 

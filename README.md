@@ -37,8 +37,8 @@ if (percent.valid(5)) { // => true
 ```js
 var percent = require('percent');
 
-a = '5%';
-b = 6;
+var a = '5%';
+var b = 6;
 
 if (percent.lt(a, b)) { // => true
   console.log('a is smaller than b');

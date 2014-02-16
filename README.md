@@ -4,9 +4,11 @@
 
 Percent is npm module which gives you fine options to control percentages.
 
-## Installation
+## Install
 
-With [npm](https://npmjs.org): `npm install percent`
+```bash
+$ npm install percent
+```
 
 ## Examples
 

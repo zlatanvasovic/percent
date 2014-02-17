@@ -102,6 +102,6 @@ describe('percent.neq', function () {
     assert.equal(percent.neq(6, 5), true);
     assert.equal(percent.neq('6', '5'), true);
     assert.equal(percent.neq('6%', 5), true);
-    assert.equal(percent.neq(/i/g, /i/g), false);
+    assert.equal(percent.neq(/first/g, /second/g), false);
   });
 });

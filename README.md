@@ -49,58 +49,65 @@ if (percent.lt(a, b)) { // => true
 var percent = require('percent');
 ```
 
-### percent.calc(value, total, decimal [, sign])
+### .calc()
 
-Example: `percent.calc(5, 20, 0)`
+**Usage:** `percent.calc(value, total, decimal [, sign])`  
+**Example:** `percent.calc(5, 20, 0)`
 
-Calculates percent value from the given number (`value`) and total number
+Calculates percentage from the given number (`value`) and total number
 (`total`) with specified number of decimals (`decimal`).
 
-`sign` is boolean which turns percent sign (`%`) addition. `percent.calc` will
-return percent value with percent sign if `sign` is `true` (it's false by
-default).
+`sign` is boolean which turns percent sign (`%`) addition. Returns percent
+value with percent sign if `sign` is `true` (it's false by default).
 
-### percent.valid(thing)
+### .valid()
 
-Example: `percent.valid('5%')`
+**Usage:** `percent.valid(thing)`  
+**Example:** `percent.valid('5%')`
 
 Checks if `thing` is valid percent value. It is valid if it's number,
 number-like string (e.g. `'10'`, not `10`), or string with number and percent
 sign. Spaces are allowed in strings.
 
-### percent.sign(thing)
+### .sign()
 
-Example: `percent.sign(5)`
+**Usage:** `percent.sign(thing)`  
+**Example:** `percent.sign(5)`
 
 Adds percent sign to `thing`.
 
-### percent.unsign(thing)
+### .unsign()
 
-Example: `percent.unsign('5%')`
+**Usage:** `percent.unsign(thing)`  
+**Example:** `percent.unsign('5%')`
 
 Removes percent sign(s) from `thing`.
 
-### percent.lt(l, t)
+### .lt()
 
-Example: `percent.lt('5%', 6)`
+**Usage:** `percent.lt(l, t)`  
+**Example:** `percent.lt('5%', 6)`
 
 Checks is the first argument smaller than second.
 
-### percent.gt(g, t)
+### .gt()
 
-Example: `percent.gt('6%', 5)`
+**Usage:** `percent.gt(g, t)`  
+**Example:** `percent.gt('6%', 5)`
 
 Check is the first argument greater than second.
 
-### percent.eq(e, q)
+### .eq()
 
-Example: `percent.eq('5%', 5)`
+**Usage:** `percent.eq(e, q)`  
+**Example:** `percent.eq('5%', 5)`
 
 Checks are the arguments logically equal.
 
-### percent.neq(ne, q)
+### .neq()
 
-Example: `percent.neq('6%', 5)`
+**Usage:** `percent.neq(ne, q)`  
+**Example:** `percent.neq('6%', 5)`
 
 Checks are the arguments logically unequal.
 

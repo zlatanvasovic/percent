@@ -48,9 +48,11 @@ exports.valid = function (thing) {
   if (typeof thing === 'number') {
     return true;
   }
+
   if (typeof thing === 'string' && thing.match(/^\s?\d+\s?%?\s?$/)) {
     return true;
   }
+
   return false;
 };
 
@@ -63,6 +65,7 @@ exports.sign = function (thing) {
                                     !thing.match(/%/g))) {
     return thing + '%';
   }
+
   return thing;
 };
 
@@ -74,6 +77,7 @@ exports.unsign = function (thing) {
   if (typeof thing === 'string') {
     return thing.replace(/%/g, '');
   }
+
   return thing;
 };
 
@@ -87,6 +91,7 @@ exports.lt = function (l, t) {
       return true;
     }
   }
+
   return false;
 };
 
@@ -96,6 +101,7 @@ exports.gt = function (g, t) {
       return true;
     }
   }
+
   return false;
 };
 
@@ -105,6 +111,7 @@ exports.eq = function (e, q) {
       return true;
     }
   }
+
   return false;
 };
 
@@ -114,5 +121,6 @@ exports.neq = function (ne, q) {
       return true;
     }
   }
+
   return false;
 };

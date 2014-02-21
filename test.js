@@ -2,7 +2,7 @@
 
 'use strict';
 
-var percent = require('./index');
+var percent = require('./');
 var assert = require('assert');
 
 // Percent calculation tests

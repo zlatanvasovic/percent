@@ -71,7 +71,7 @@ exports.sign = function (thing) {
  */
 
 exports.unsign = function (thing) {
-  if (typeof thing === 'string' && thing.match(/%/g)) {
+  if (typeof thing === 'string') {
     return thing.replace(/%/g, '');
   }
   return thing;

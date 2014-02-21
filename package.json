@@ -15,7 +15,7 @@
     "LICENSE.md"
   ],
   "scripts": {
-    "test": "mocha && jshint *.js && jscs *.js"
+    "test": "mocha -R spec && jshint *.js && jscs *.js"
   },
   "engines": {
     "node": ">=0.8.0"

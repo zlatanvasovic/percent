@@ -11,7 +11,7 @@
 
 exports.calc = function (value, total, decimal, sign) {
   var wrong = [NaN, Infinity, -Infinity];
-  var n;
+  var i;
 
   // Set defaults
   if (sign === null) {
@@ -31,9 +31,9 @@ exports.calc = function (value, total, decimal, sign) {
   }
 
   // Avoid wrong numbers
-  for (n in wrong) {
-    if (value === n || total === n || decimal === n) {
-      return n;
+  for (i in wrong) {
+    if (value === i || total === i || decimal === i) {
+      return i;
     }
   }
 

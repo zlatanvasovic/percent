@@ -45,7 +45,7 @@ describe('percent.valid', function () {
   });
 });
 
-// Append sign tests
+// Add sign tests
 describe('percent.sign', function () {
   it('should add percent sign', function () {
     assert.equal(percent.sign(5), '5%');
@@ -57,7 +57,7 @@ describe('percent.sign', function () {
   });
 });
 
-// Remove sign(s) tests
+// Percent cleaning tests
 describe('percent.unsign', function () {
   it('should remove percent sign(s)', function () {
     assert.equal(percent.unsign(' 5 % '), ' 5  ');
@@ -66,6 +66,17 @@ describe('percent.unsign', function () {
   it('should ignore wrong values', function () {
     assert.equal(percent.unsign(25), 25);
     assert.deepEqual(percent.unsign([25, 25]), [25, 25]);
+  });
+});
+
+describe('percent.clean', function () {
+  it('should remove percent sign(s) and spaces', function () {
+    assert.equal(percent.clean(' 5 % '), '5');
+    assert.equal(percent.clean('25 %%%'), '25');
+  });
+  it('should ignore wrong values', function () {
+    assert.equal(percent.clean(25), 25);
+    assert.deepEqual(percent.clean([25, 25]), [25, 25]);
   });
 });
 

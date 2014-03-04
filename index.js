@@ -44,9 +44,9 @@ exports.calc = function (value, total, decimal, sign) {
  * Percent validation
  */
 
-exports.valid = function (thing) {
-  if (typeof thing === 'number' ||
-      (typeof thing === 'string' && thing.match(/^\s?\d+\s?%?\s?$/))) {
+exports.valid = function (value) {
+  if (typeof value === 'number' ||
+      (typeof value === 'string' && value.match(/^\s?\d+\s?%?\s?$/))) {
     return true;
   }
 
@@ -57,25 +57,35 @@ exports.valid = function (thing) {
  * Add percent sign
  */
 
-exports.sign = function (thing) {
-  if (typeof thing === 'number' || (typeof thing === 'string' &&
-                                    !thing.match(/%/g))) {
-    return thing + '%';
+exports.sign = function (value) {
+  if (typeof value === 'number' ||
+      (typeof value === 'string' && !value.match(/%/g))) {
+    return value + '%';
   }
 
-  return thing;
+  return value;
 };
 
 /*
- * Remove percent sign(s)
+ * Clean the percent
  */
 
-exports.unsign = function (thing) {
-  if (typeof thing === 'string') {
-    return thing.replace(/%/g, '');
+exports.unsign = function (value) {
+  if (typeof value === 'string') {
+    return value.replace(/%/g, '');
   }
 
-  return thing;
+  return value;
+};
+
+exports.clean = function (value) {
+  value = exports.unsign(value);
+
+  if (typeof value === 'string') {
+    return value.replace(/\s/g, '');
+  }
+
+  return value;
 };
 
 /*

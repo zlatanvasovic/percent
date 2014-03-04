@@ -62,26 +62,33 @@ value with percent sign if `sign` is `true` (it's false by default).
 
 ### .valid()
 
-**Usage:** `percent.valid(thing)`  
+**Usage:** `percent.valid(value)`  
 **Example:** `percent.valid('5%')`
 
-Checks if `thing` is valid percent value. It is valid if it's number,
+Checks if `value` is valid percent value. It is valid if it's number,
 number-like string (e.g. `'10'`, not `10`), or string with number and percent
 sign. Spaces are allowed in strings.
 
 ### .sign()
 
-**Usage:** `percent.sign(thing)`  
+**Usage:** `percent.sign(value)`  
 **Example:** `percent.sign(5)`
 
-Adds percent sign to `thing`.
+Adds percent sign to `value`.
 
 ### .unsign()
 
-**Usage:** `percent.unsign(thing)`  
+**Usage:** `percent.unsign(value)`  
 **Example:** `percent.unsign('5%')`
 
-Removes percent sign(s) from `thing`.
+Removes percent sign(s) from `value`.
+
+### .clean()
+
+**Usage:** `percent.clean(value)`  
+**Example:** `percent.clean(' 5 %  ')`
+
+Removes percent sign(s) and spaces from `value`.
 
 ### .lt()
 

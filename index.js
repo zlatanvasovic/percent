@@ -32,7 +32,7 @@ exports.calc = function (value, total, decimal, sign) {
 
   // Avoid wrong numbers
   for (i in wrong) {
-    if (value === i || total === i || decimal === i) {
+    if ([value, total, decimal].indexOf(i) > -1) {
       return i;
     }
   }

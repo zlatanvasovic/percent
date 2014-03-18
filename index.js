@@ -13,11 +13,6 @@ exports.calc = function (value, total, decimal, sign) {
   var wrong = [NaN, Infinity, -Infinity];
   var i;
 
-  // Set defaults
-  if (sign === null) {
-    sign = false;
-  }
-
   // Avoid argument type problems
   if (typeof value !== 'number' ||
       typeof total !== 'number' ||
@@ -44,9 +39,12 @@ exports.calc = function (value, total, decimal, sign) {
  * Percent validation
  */
 
+// Supreme percent regexp
+exports.re = /^\s?[-+]?(\d*[.])?\d+\s?%?\s?$/;
+
 exports.valid = function (value) {
   if (typeof value === 'number' ||
-      (typeof value === 'string' && value.match(/^\s?\d+\s?%?\s?$/))) {
+      (typeof value === 'string' && value.match(exports.re))) {
     return true;
   }
 
@@ -88,13 +86,26 @@ exports.clean = function (value) {
   return value;
 };
 
+exports.convert = function (value, negative) {
+  value = exports.clean(value);
+
+  if (typeof value === 'string' && exports.valid(value)) {
+    if (negative) {
+      return -value;
+    }
+    return +value;
+  }
+
+  return value;
+};
+
 /*
  * Percent comparision
  */
 
 exports.lt = function (l, t) {
   if (exports.valid(l) && exports.valid(t)) {
-    if (exports.unsign(l) < exports.unsign(t)) {
+    if (exports.convert(l) < exports.convert(t)) {
       return true;
     }
   }
@@ -104,7 +115,7 @@ exports.lt = function (l, t) {
 
 exports.gt = function (g, t) {
   if (exports.valid(g) && exports.valid(t)) {
-    if (exports.unsign(g) > exports.unsign(t)) {
+    if (exports.convert(g) > exports.convert(t)) {
       return true;
     }
   }
@@ -114,7 +125,7 @@ exports.gt = function (g, t) {
 
 exports.eq = function (e, q) {
   if (exports.valid(e) && exports.valid(q)) {
-    if (exports.unsign(e) == exports.unsign(q)) {
+    if (exports.convert(e) == exports.convert(q)) {
       return true;
     }
   }
@@ -124,7 +135,25 @@ exports.eq = function (e, q) {
 
 exports.neq = function (ne, q) {
   if (exports.valid(ne) && exports.valid(q)) {
-    if (exports.unsign(ne) != exports.unsign(q)) {
+    if (exports.convert(ne) != exports.convert(q)) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+exports.satisfies = function (value, min, max) {
+  var _max = max;
+  if (min > max) {
+    max = min;
+    min = _max;
+  }
+
+  if (exports.valid(value) &&
+      exports.valid(min) && exports.valid(max)) {
+    if (exports.convert(value) > exports.convert(min) &&
+        exports.convert(value) < exports.convert(max)) {
       return true;
     }
   }

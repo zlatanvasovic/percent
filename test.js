@@ -80,6 +80,14 @@ describe('percent.clean', function () {
   });
 });
 
+describe('percent.convert', function () {
+  it('should convert given value to number', function () {
+    assert.equal(percent.convert('   5 %%%'), 5);
+    assert.equal(percent.convert(' 6.6 %%%%%', true), -6.6);
+    assert.equal(percent.convert('lol'), 'lol');
+  });
+});
+
 // Percent comparision tests
 describe('percent.lt', function () {
   it('should check is the first argument smaller than second', function () {
@@ -114,5 +122,15 @@ describe('percent.neq', function () {
     assert.equal(percent.neq('6', '5'), true);
     assert.equal(percent.neq('6%', 5), true);
     assert.equal(percent.neq(/first/g, /second/g), false);
+  });
+});
+
+describe('percent.satisfies', function () {
+  it('should check does the value satisfy the given range', function () {
+    assert.equal(percent.satisfies(5.5, 5, 6), true);
+    assert.equal(percent.satisfies('6', '7', '5'), true);
+    assert.equal(percent.satisfies('5.5%', 7, 5), true);
+    assert.equal(percent.satisfies(5.5, 5.7, 6), false);
+    assert.equal(percent.satisfies([], [], []), false);
   });
 });

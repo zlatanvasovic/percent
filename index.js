@@ -11,7 +11,6 @@
 
 exports.calc = function (value, total, decimal, sign) {
   var wrong = [NaN, Infinity, -Infinity];
-  var i;
 
   // Avoid argument type problems
   if (typeof value !== 'number' ||
@@ -26,9 +25,9 @@ exports.calc = function (value, total, decimal, sign) {
   }
 
   // Avoid wrong numbers
-  for (i in wrong) {
-    if ([value, total, decimal].indexOf(i) > -1) {
-      return i;
+  for (var i = 0; i < wrong.length; i++) {
+    if ([value, total, decimal].indexOf(wrong[i]) > -1) {
+      return wrong[i];
     }
   }
 

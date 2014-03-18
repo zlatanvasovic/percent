@@ -84,6 +84,7 @@ describe('percent.convert', function () {
   it('should convert given value to number', function () {
     assert.equal(percent.convert('   5 %%%'), 5);
     assert.equal(percent.convert(' 6.6 %%%%%', true), -6.6);
+    assert.equal(percent.convert(6, true), -6);
     assert.equal(percent.convert('lol'), 'lol');
   });
 });

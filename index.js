@@ -89,7 +89,7 @@ exports.clean = function (value) {
 exports.convert = function (value, negative) {
   value = exports.clean(value);
 
-  if (typeof value === 'string' && exports.valid(value)) {
+  if (exports.valid(value)) {
     if (negative) {
       return -value;
     }

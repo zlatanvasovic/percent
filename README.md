@@ -64,6 +64,12 @@ Calculates percentage from the given number (`value`) and total number
 `sign` is boolean which turns percent sign (`%`) addition. Returns percent
 value with percent sign if `sign` is `true` (it's false by default).
 
+### .re
+
+**Usage:** `percent.re`
+
+Returns supreme percent regexp.
+
 ### .valid()
 
 **Usage:** `percent.valid(value)`  
@@ -94,6 +100,14 @@ Removes percent sign(s) from `value`.
 
 Removes percent sign(s) and spaces from `value`.
 
+### .convert()
+
+**Usage:** `percent.convert(value, negative)`  
+**Example:** `percent.convert(' 5 %  ')`
+
+Converts percent-like `value` to number. Returns negative number if `negative`
+is `true`.
+
 ### .lt()
 
 **Usage:** `percent.lt(l, t)`  
@@ -121,6 +135,14 @@ Checks are the arguments logically equal.
 **Example:** `percent.neq('6%', 5)`
 
 Checks are the arguments logically unequal.
+
+### .satisfies()
+
+**Usage:** `percent.satisfies(value, min, max)`  
+**Example:** `percent.satisfies(5.5, 5, 6)`
+
+Checks does the value satisfy the given range. It will not fail if `min` is
+bigger than `max`, it will exchange `min` and `max` values.
 
 ## License
 

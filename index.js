@@ -1,5 +1,5 @@
 /*!
- * Percent v1.0.3 (http://git.io/percentjs)
+ * Percent v1.1.0 (http://git.io/percentjs)
  * Licensed under the MIT license.
  */
 

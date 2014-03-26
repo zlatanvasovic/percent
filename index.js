@@ -92,6 +92,7 @@ exports.convert = function (value, negative) {
     if (negative) {
       return -value;
     }
+
     return +value;
   }
 
@@ -143,6 +144,7 @@ exports.neq = function (ne, q) {
 };
 
 exports.satisfies = function (value, min, max) {
+  // Reorder min and max
   var _max = max;
   if (min > max) {
     max = min;

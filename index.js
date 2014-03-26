@@ -152,11 +152,10 @@ exports.satisfies = function (value, min, max) {
   }
 
   if (exports.valid(value) &&
-      exports.valid(min) && exports.valid(max)) {
-    if (exports.convert(value) > exports.convert(min) &&
-        exports.convert(value) < exports.convert(max)) {
-      return true;
-    }
+      exports.valid(min) && exports.valid(max) &&
+      exports.convert(value) > exports.convert(min) &&
+      exports.convert(value) < exports.convert(max)) {
+    return true;
   }
 
   return false;

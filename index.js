@@ -104,40 +104,36 @@ exports.convert = function (value, negative) {
  */
 
 exports.lt = function (l, t) {
-  if (exports.valid(l) && exports.valid(t)) {
-    if (exports.convert(l) < exports.convert(t)) {
-      return true;
-    }
+  if (exports.valid(l) && exports.valid(t) &&
+      exports.convert(l) < exports.convert(t)) {
+    return true;
   }
 
   return false;
 };
 
 exports.gt = function (g, t) {
-  if (exports.valid(g) && exports.valid(t)) {
-    if (exports.convert(g) > exports.convert(t)) {
-      return true;
-    }
+  if (exports.valid(g) && exports.valid(t) &&
+      exports.convert(g) > exports.convert(t)) {
+    return true;
   }
 
   return false;
 };
 
 exports.eq = function (e, q) {
-  if (exports.valid(e) && exports.valid(q)) {
-    if (exports.convert(e) == exports.convert(q)) {
-      return true;
-    }
+  if (exports.valid(e) && exports.valid(q) &&
+      exports.convert(e) == exports.convert(q)) {
+    return true;
   }
 
   return false;
 };
 
 exports.neq = function (ne, q) {
-  if (exports.valid(ne) && exports.valid(q)) {
-    if (exports.convert(ne) != exports.convert(q)) {
-      return true;
-    }
+  if (exports.valid(ne) && exports.valid(q) &&
+      exports.convert(ne) != exports.convert(q)) {
+    return true;
   }
 
   return false;

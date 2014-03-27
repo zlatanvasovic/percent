@@ -61,8 +61,9 @@ var percent = require('percent');
 Calculates percentage from the given number (`value`) and total number
 (`total`) with specified number of decimals (`decimal`).
 
-`sign` is boolean which turns percent sign (`%`) addition. Returns percent
-value with percent sign if `sign` is `true` (it's false by default).
+`sign` may be boolean which turns percent sign (`%`) addition. Returns percent
+value with percent sign if `sign` is `true` (it's `false` by default). If
+`sign` is string, it will be used as value suffix.
 
 ### .re
 

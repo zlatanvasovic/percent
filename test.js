@@ -21,6 +21,7 @@ describe('percent.calc', function () {
     assert.equal(percent.calc([], 5, 0), null);
     assert.equal(percent.calc(0, 5, 0), 0);
     assert.equal(percent.calc(5, 0, 0), 0);
+    assert.equal(percent.calc(5, -0, 0), 0);
     assert.equal(percent.calc(NaN, 0, 0), 0);
     assert.equal(percent.calc(Infinity, 5, 0), Infinity);
     assert.equal(percent.calc(-Infinity, 5, 0), -Infinity);

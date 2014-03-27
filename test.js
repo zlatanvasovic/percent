@@ -30,6 +30,8 @@ describe('percent.calc', function () {
   it('should return right percent values with percent sign', function () {
     assert.equal(percent.calc(5, 20, 0, true), '25%');
     assert.equal(percent.calc(5, 100, 0, true), '5%');
+    assert.equal(percent.calc(5, 100, 0, ' %'), '5 %');
+    assert.equal(percent.calc(5, 100, 0, ' percent'), '5 percent');
   });
 });
 

@@ -31,7 +31,12 @@ exports.calc = function (value, total, decimal, sign) {
     }
   }
 
-  return (value / total * 100).toFixed(decimal) + (sign ? '%' : '');
+  // Define the sign
+  if (typeof sign !== 'string') {
+    sign = sign ? '%' : '';
+  }
+
+  return (value / total * 100).toFixed(decimal) + sign;
 };
 
 /*

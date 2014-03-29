@@ -145,7 +145,7 @@ exports.neq = function (ne, q) {
 };
 
 exports.satisfies = function (value, min, max) {
-  // Reorder min and max
+  // Sort min and max by size
   var _max = max;
   if (min > max) {
     max = min;

@@ -10,6 +10,7 @@
   "disallowSpacesInsideArrayBrackets": true,
   "disallowSpacesInsideParentheses": true,
   "disallowTrailingWhitespace": true,
+  "disallowQuotedKeysInObjects": "allButReserved",
   "maximumLineLength": 80,
   "requireCamelCaseOrUpperCaseIdentifiers": true,
   "requireCommaBeforeLineBreak": true,

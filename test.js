@@ -17,7 +17,7 @@ describe('percent.calc', function () {
     assert.equal(percent.calc(50, 6, 2), 833.33);
   });
 
-  it('should ignore wrong values', function () {
+  it('should ignore bad values', function () {
     assert.equal(percent.calc([], 5, 0), null);
     assert.equal(percent.calc(0, 5, 0), 0);
     assert.equal(percent.calc(5, 0, 0), 0);
@@ -134,6 +134,7 @@ describe('percent.satisfies', function () {
     assert.equal(percent.satisfies(5.5, 5, 6), true);
     assert.equal(percent.satisfies('6', '7', '5'), true);
     assert.equal(percent.satisfies('5.5%', 7, 5), true);
+    assert.equal(percent.satisfies('5.5', 5.5, 5), true);
     assert.equal(percent.satisfies(5.5, 5.7, 6), false);
     assert.equal(percent.satisfies([], [], []), false);
   });

@@ -28,7 +28,7 @@ exports.calc = function (value, total, decimal, sign) {
   for (var i = 0; i < badNumbers.length; i++) {
     if ([value, total, decimal].indexOf(badNumbers[i]) > -1) {
       return badNumbers[i];
-    }
+    }  
   }
 
   // Define the sign
@@ -154,8 +154,8 @@ exports.satisfies = function (value, min, max) {
 
   if (exports.valid(value) &&
       exports.valid(min) && exports.valid(max) &&
-      exports.convert(value) > exports.convert(min) &&
-      exports.convert(value) < exports.convert(max)) {
+      exports.convert(value) >= exports.convert(min) &&
+      exports.convert(value) <= exports.convert(max)) {
     return true;
   }
 

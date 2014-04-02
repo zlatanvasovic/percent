@@ -28,7 +28,7 @@ exports.calc = function (value, total, decimal, sign) {
   for (var i = 0; i < badNumbers.length; i++) {
     if ([value, total, decimal].indexOf(badNumbers[i]) > -1) {
       return badNumbers[i];
-    }  
+    }
   }
 
   // Define the sign

@@ -106,7 +106,7 @@ Removes percent sign(s) and spaces from `value`.
 **Usage:** `percent.convert(value [, negative])`  
 **Example:** `percent.convert(' 5 %  ')`
 
-Converts percent-like `value` to number. Returns negative number if `negative`
+Converts percent-like string to number. Returns negative number if `negative`
 is `true`.
 
 ### .lt()

@@ -55,7 +55,7 @@ var percent = require('percent');
 
 ### .calc()
 
-**Usage:** `percent.calc(value, total, decimal [, sign])`  
+**Usage:** `percent.calc(value, total, decimal, [sign])`  
 **Example:** `percent.calc(5, 20, 0)`
 
 Calculates percentage from the given number (`value`) and total number

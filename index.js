@@ -94,11 +94,7 @@ exports.convert = function (value, negative) {
   value = exports.clean(value);
 
   if (exports.valid(value)) {
-    if (negative) {
-      return -value;
-    }
-
-    return +value;
+    return negative ? -value : +value;
   }
 
   return value;

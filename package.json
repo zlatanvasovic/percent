@@ -24,6 +24,6 @@
   "devDependencies": {
     "jscs": "1.4.x",
     "jshint": "2.5.x",
-    "mocha": "1.18.x"
+    "mocha": "1.20.x"
   }
 }

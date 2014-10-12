@@ -140,7 +140,7 @@ Checks are the arguments logically unequal.
 **Example:** `percent.satisfies(5.5, 5, 6)`
 
 Checks does the value satisfy the given range. It will not fail if `min` is
-bigger than `max`, it will exchange `min` and `max` values.
+bigger than `max`, but it will exchange `min` and `max` values.
 
 ## License
 

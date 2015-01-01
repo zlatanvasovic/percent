@@ -23,8 +23,8 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "jscs": "1.6.x",
+    "jscs": "1.9.x",
     "jshint": "2.5.x",
-    "mocha": "1.21.x"
+    "mocha": "2.1.x"
   }
 }

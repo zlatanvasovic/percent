@@ -30,7 +30,7 @@ console.log(percent.calc(5, 20, 0)); // => 25
 var percent = require('percent');
 
 if (percent.valid(5)) { // => true
-  console.log('5 is valid percent value');
+  console.log('5 is a valid percent value');
 }
 ```
 

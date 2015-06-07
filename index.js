@@ -44,7 +44,7 @@ exports.calc = function (value, total, decimal, sign) {
  */
 
 // Supreme percent regexp
-exports.re = /^\s?[-+]?(\d*[.])?\d+\s?%?\s?$/;
+exports.re = /^\s?[-+]?(\d*[.|,])?\d+\s?%?\s?$/;
 
 exports.valid = function (value) {
   if (typeof value === 'number' ||

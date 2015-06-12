@@ -17,6 +17,13 @@ describe('percent.calc', function () {
     assert.equal(percent.calc(50, 6, 2), 833.33);
   });
 
+  it('should return right percent values with percent sign', function () {
+    assert.equal(percent.calc(5, 20, 0, true), '25%');
+    assert.equal(percent.calc(5, 100, 0, true), '5%');
+    assert.equal(percent.calc(5, 100, 0, ' %'), '5 %');
+    assert.equal(percent.calc(5, 100, 0, ' percent'), '5 percent');
+  });
+
   it('should ignore bad values', function () {
     assert.equal(percent.calc([], 5, 0), null);
     assert.equal(percent.calc(0, 5, 0), 0);
@@ -25,13 +32,6 @@ describe('percent.calc', function () {
     assert.equal(percent.calc(NaN, 0, 0), 0);
     assert.equal(percent.calc(Infinity, 5, 0), Infinity);
     assert.equal(percent.calc(-Infinity, 5, 0), -Infinity);
-  });
-
-  it('should return right percent values with percent sign', function () {
-    assert.equal(percent.calc(5, 20, 0, true), '25%');
-    assert.equal(percent.calc(5, 100, 0, true), '5%');
-    assert.equal(percent.calc(5, 100, 0, ' %'), '5 %');
-    assert.equal(percent.calc(5, 100, 0, ' percent'), '5 percent');
   });
 });
 

@@ -139,8 +139,8 @@ Checks are the arguments logically unequal.
 **Usage:** `percent.satisfies(value, min, max)`  
 **Example:** `percent.satisfies(5.5, 5, 6)`
 
-Checks does the value satisfy the given range. It will not fail if `min` is
-bigger than `max`, but it will exchange `min` and `max` values.
+Checks does the value satisfy the given range. It will exchange `min` and `max`
+values if `min` is bigger than `max`.
 
 ## License
 

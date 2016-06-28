@@ -17,14 +17,13 @@
     "LICENSE.md"
   ],
   "scripts": {
-    "test": "mocha && jshint *.js && jscs *.js"
+    "test": "mocha && jscs *.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "devDependencies": {
-    "jscs": "1.13.x",
-    "jshint": "2.8.x",
-    "mocha": "2.2.x"
+    "jscs": "3.0.x",
+    "mocha": "2.5.x"
   }
 }

@@ -42,7 +42,7 @@ describe('percent.valid', function () {
     assert.equal(percent.valid(' 5 '), true);
     assert.equal(percent.valid(' 5 % '), true);
     assert.equal(percent.valid('5.01'), true);
-    assert.equal(percent.valid(1,37), true);
+    assert.equal(percent.valid(1.37), true);
     assert.equal(percent.valid('string'), false);
     assert.equal(percent.valid([5, '%']), false);
     assert.equal(percent.valid({value: 6}), false);

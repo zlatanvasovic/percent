@@ -1,4 +1,7 @@
-/* global describe, it */
+/*!
+ * Tests required for percent.
+ * Licensed under the MIT license.
+ */
 
 'use strict';
 

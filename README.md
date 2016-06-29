@@ -118,7 +118,7 @@ Checks is the first argument smaller than second.
 **Usage:** `percent.gt(g, t)`  
 **Example:** `percent.gt('6%', 5)`
 
-Check is the first argument greater than second.
+Checks is the first argument greater than second.
 
 ### .eq()
 

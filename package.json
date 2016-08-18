@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "jscs": "3.0.x",
-    "mocha": "2.5.x"
+    "mocha": "3.0.x"
   }
 }

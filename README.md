@@ -1,7 +1,7 @@
 # Percent
 
-[![Build Status](https://travis-ci.org/ZDroid/percent.svg?branch=master)](https://travis-ci.org/ZDroid/percent)
-[![devDependency Status](https://david-dm.org/ZDroid/percent/dev-status.svg)](https://david-dm.org/ZDroid/percent#info=devDependencies)
+[![Build Status](https://travis-ci.org/zdroid/percent.svg?branch=master)](https://travis-ci.org/zdroid/percent)
+[![devDependency Status](https://david-dm.org/zdroid/percent/dev-status.svg)](https://david-dm.org/zdroid/percent#info=devDependencies)
 
 > Percent control done right
 
@@ -144,4 +144,4 @@ values if `min` is bigger than `max`.
 
 ## License
 
-MIT &copy; [Zlatan Vasović](https://github.com/ZDroid)
+MIT &copy; [Zlatan Vasović](https://github.com/zdroid)

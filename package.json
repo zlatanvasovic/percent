@@ -17,13 +17,13 @@
     "LICENSE.md"
   ],
   "scripts": {
-    "test": "mocha && jscs *.js"
+    "test": "mocha && eslint *.js"
   },
   "engines": {
     "node": ">=4"
   },
   "devDependencies": {
-    "jscs": "3.0.x",
+    "eslint": "3.3.x",
     "mocha": "3.0.x"
   }
 }

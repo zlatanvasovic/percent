@@ -49,6 +49,7 @@ describe('percent.valid', function () {
     assert.equal(percent.valid('string'), false);
     assert.equal(percent.valid([5, '%']), false);
     assert.equal(percent.valid({value: 6}), false);
+    /* eslint no-empty-function: "off" */
     assert.equal(percent.valid(function () {}), false);
   });
 });

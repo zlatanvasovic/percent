@@ -11,7 +11,7 @@
   ],
   "version": "1.1.1",
   "license": "MIT",
-  "repository": "ZDroid/percent",
+  "repository": "zdroid/percent",
   "files": [
     "index.js",
     "LICENSE.md"
@@ -23,7 +23,7 @@
     "node": ">=4"
   },
   "devDependencies": {
-    "eslint": "3.3.x",
+    "eslint": "3.5.x",
     "mocha": "3.0.x"
   }
 }

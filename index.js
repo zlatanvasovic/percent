@@ -9,8 +9,8 @@
  * Percent calculation
  */
 
-exports.calc = function (value, total, decimal, sign) {
-  var badNumbers = [NaN, Infinity, -Infinity];
+exports.calc = (value, total, decimal, sign) => {
+  const badNumbers = [NaN, Infinity, -Infinity];
 
   // Avoid argument type problems
   if (typeof value !== 'number' ||
@@ -25,7 +25,7 @@ exports.calc = function (value, total, decimal, sign) {
   }
 
   // Avoid wrong numbers
-  for (var i = 0; i < badNumbers.length; i++) {
+  for (let i = 0; i < badNumbers.length; i++) {
     if ([value, total, decimal].indexOf(badNumbers[i]) > -1) {
       return badNumbers[i];
     }
@@ -46,7 +46,7 @@ exports.calc = function (value, total, decimal, sign) {
 // Supreme percent regexp
 exports.re = /^\s?[-+]?(\d*[.|,])*?\d+\s?%?\s?$/;
 
-exports.valid = function (value) {
+exports.valid = (value) => {
   if (typeof value === 'number' ||
       (typeof value === 'string' && value.match(exports.re))) {
     return true;
@@ -59,10 +59,10 @@ exports.valid = function (value) {
  * Add percent sign
  */
 
-exports.sign = function (value) {
+exports.sign = (value) => {
   if (typeof value === 'number' ||
       (typeof value === 'string' && !value.match(/%/g))) {
-    return value + '%';
+    return `${value}%`;
   }
 
   return value;
@@ -72,7 +72,7 @@ exports.sign = function (value) {
  * Clean the percent
  */
 
-exports.unsign = function (value) {
+exports.unsign = (value) => {
   if (typeof value === 'string') {
     return value.replace(/%/g, '');
   }
@@ -80,7 +80,7 @@ exports.unsign = function (value) {
   return value;
 };
 
-exports.clean = function (value) {
+exports.clean = (value) => {
   value = exports.unsign(value);
 
   if (typeof value === 'string') {
@@ -90,7 +90,7 @@ exports.clean = function (value) {
   return value;
 };
 
-exports.convert = function (value, negative) {
+exports.convert = (value, negative) => {
   value = exports.clean(value);
 
   if (exports.valid(value)) {
@@ -104,7 +104,7 @@ exports.convert = function (value, negative) {
  * Percent comparision
  */
 
-exports.lt = function (l, t) {
+exports.lt = (l, t) => {
   if (exports.valid(l) && exports.valid(t) &&
       exports.convert(l) < exports.convert(t)) {
     return true;
@@ -113,7 +113,7 @@ exports.lt = function (l, t) {
   return false;
 };
 
-exports.gt = function (g, t) {
+exports.gt = (g, t) => {
   if (exports.valid(g) && exports.valid(t) &&
       exports.convert(g) > exports.convert(t)) {
     return true;
@@ -122,7 +122,7 @@ exports.gt = function (g, t) {
   return false;
 };
 
-exports.eq = function (e, q) {
+exports.eq = (e, q) => {
   if (exports.valid(e) && exports.valid(q) &&
       exports.convert(e) == exports.convert(q)) {
     return true;
@@ -131,7 +131,7 @@ exports.eq = function (e, q) {
   return false;
 };
 
-exports.neq = function (ne, q) {
+exports.neq = (ne, q) => {
   if (exports.valid(ne) && exports.valid(q) &&
       exports.convert(ne) != exports.convert(q)) {
     return true;
@@ -140,10 +140,10 @@ exports.neq = function (ne, q) {
   return false;
 };
 
-exports.satisfies = function (value, min, max) {
+exports.satisfies = (value, min, max) => {
   // Sort min and max by size
   if (min > max) {
-    var _min = min;
+    let _min = min;
     min = max;
     max = _min;
   }

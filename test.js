@@ -5,144 +5,168 @@
 
 'use strict';
 
-var percent = require('./');
-var assert = require('assert');
+const percent = require('./');
+const assert = require('assert');
 
 // Percent calculation tests
-describe('percent.calc', function () {
-  it('should return right percent values', function () {
-    assert.equal(percent.calc(5, 20, 0), 25);
-    assert.equal(percent.calc(5, 100, 0), 5);
+describe('percent.calc', () => {
+  let test = percent.calc;
+
+  it('should return right percent values', () => {
+    assert.equal(test(5, 20, 0), 25);
+    assert.equal(test(5, 100, 0), 5);
   });
 
-  it('should return right percent values with decimals', function () {
-    assert.equal(percent.calc(8, 9, 2), 88.89);
-    assert.equal(percent.calc(50, 6, 2), 833.33);
+  it('should return right percent values with decimals', () => {
+    assert.equal(test(8, 9, 2), 88.89);
+    assert.equal(test(50, 6, 2), 833.33);
   });
 
-  it('should return right percent values with percent sign', function () {
-    assert.equal(percent.calc(5, 20, 0, true), '25%');
-    assert.equal(percent.calc(5, 100, 0, true), '5%');
-    assert.equal(percent.calc(5, 100, 0, ' %'), '5 %');
-    assert.equal(percent.calc(5, 100, 0, ' percent'), '5 percent');
+  it('should return right percent values with percent sign', () => {
+    assert.equal(test(5, 20, 0, true), '25%');
+    assert.equal(test(5, 100, 0, true), '5%');
+    assert.equal(test(5, 100, 0, ' %'), '5 %');
+    assert.equal(test(5, 100, 0, ' percent'), '5 percent');
   });
 
-  it('should ignore bad values', function () {
-    assert.equal(percent.calc([], 5, 0), null);
-    assert.equal(percent.calc(0, 5, 0), 0);
-    assert.equal(percent.calc(5, 0, 0), 0);
-    assert.equal(percent.calc(5, -0, 0), 0);
-    assert.equal(percent.calc(NaN, 0, 0), 0);
-    assert.equal(percent.calc(Infinity, 5, 0), Infinity);
-    assert.equal(percent.calc(-Infinity, 5, 0), -Infinity);
+  it('should ignore bad values', () => {
+    assert.equal(test([], 5, 0), null);
+    assert.equal(test(0, 5, 0), 0);
+    assert.equal(test(5, 0, 0), 0);
+    assert.equal(test(5, -0, 0), 0);
+    assert.equal(test(NaN, 0, 0), 0);
+    assert.equal(test(Infinity, 5, 0), Infinity);
+    assert.equal(test(-Infinity, 5, 0), -Infinity);
   });
 });
 
 // Percent validation tests
-describe('percent.valid', function () {
-  it('should validate given argument as percent', function () {
-    assert.equal(percent.valid(5), true);
-    assert.equal(percent.valid(' 5 '), true);
-    assert.equal(percent.valid(' 5 % '), true);
-    assert.equal(percent.valid('5.01'), true);
-    assert.equal(percent.valid(1.37), true);
-    assert.equal(percent.valid('1,57.35%'), true);
-    assert.equal(percent.valid('string'), false);
-    assert.equal(percent.valid([5, '%']), false);
-    assert.equal(percent.valid({value: 6}), false);
-    /* eslint no-empty-function: "off" */
-    assert.equal(percent.valid(function () {}), false);
+describe('percent.valid', () => {
+  let test = percent.valid;
+
+  it('should validate given argument as percent', () => {
+    assert.equal(test(5), true);
+    assert.equal(test(' 5 '), true);
+    assert.equal(test(' 5 % '), true);
+    assert.equal(test('5.01'), true);
+    assert.equal(test(1.37), true);
+    assert.equal(test('1,57.35%'), true);
+    assert.equal(test('string'), false);
+    assert.equal(test([5, '%']), false);
+    assert.equal(test({value: 6}), false);
+    assert.equal(test(new Function()), false);
   });
 });
 
 // Add sign tests
-describe('percent.sign', function () {
-  it('should add percent sign', function () {
-    assert.equal(percent.sign(5), '5%');
-    assert.equal(percent.sign('25'), '25%');
+describe('percent.sign', () => {
+  let test = percent.sign;
+
+  it('should add percent sign', () => {
+    assert.equal(test(5), '5%');
+    assert.equal(test('25'), '25%');
   });
-  it('should ignore wrong values', function () {
-    assert.equal(percent.sign('25%'), '25%');
-    assert.deepEqual(percent.sign({sign: 6}), {sign: 6});
+
+  it('should ignore wrong values', () => {
+    assert.equal(test('25%'), '25%');
+    assert.deepEqual(test({sign: 6}), {sign: 6});
   });
 });
 
 // Percent cleaning tests
-describe('percent.unsign', function () {
-  it('should remove percent sign(s)', function () {
-    assert.equal(percent.unsign(' 5 % '), ' 5  ');
-    assert.equal(percent.unsign('25 %%%'), '25 ');
+describe('percent.unsign', () => {
+  let test = percent.unsign;
+
+  it('should remove percent sign(s)', () => {
+    assert.equal(test(' 5 % '), ' 5  ');
+    assert.equal(test('25 %%%'), '25 ');
   });
-  it('should ignore wrong values', function () {
-    assert.equal(percent.unsign(25), 25);
-    assert.deepEqual(percent.unsign([25, 25]), [25, 25]);
+
+  it('should ignore wrong values', () => {
+    assert.equal(test(25), 25);
+    assert.deepEqual(test([25, 25]), [25, 25]);
   });
 });
 
-describe('percent.clean', function () {
-  it('should remove percent sign(s) and spaces', function () {
-    assert.equal(percent.clean(' 5 % '), '5');
-    assert.equal(percent.clean('25 %%%'), '25');
+describe('percent.clean', () => {
+  let test = percent.clean;
+
+  it('should remove percent sign(s) and spaces', () => {
+    assert.equal(test(' 5 % '), '5');
+    assert.equal(test('25 %%%'), '25');
   });
-  it('should ignore wrong values', function () {
-    assert.equal(percent.clean(25), 25);
-    assert.deepEqual(percent.clean([25, 25]), [25, 25]);
+
+  it('should ignore wrong values', () => {
+    assert.equal(test(25), 25);
+    assert.deepEqual(test([25, 25]), [25, 25]);
   });
 });
 
-describe('percent.convert', function () {
-  it('should convert given value to number', function () {
-    assert.equal(percent.convert('   5 %%%'), 5);
-    assert.equal(percent.convert(' 6.6 %%%%%', true), -6.6);
-    assert.equal(percent.convert(6, true), -6);
-    assert.equal(percent.convert('lol'), 'lol');
+describe('percent.convert', () => {
+  let test = percent.convert;
+
+  it('should convert given value to number', () => {
+    assert.equal(test('   5 %%%'), 5);
+    assert.equal(test(' 6.6 %%%%%', true), -6.6);
+    assert.equal(test(6, true), -6);
+    assert.equal(test('lol'), 'lol');
   });
 });
 
 // Percent comparision tests
-describe('percent.lt', function () {
-  it('should check is the first argument smaller than second', function () {
-    assert.equal(percent.lt(5, 6), true);
-    assert.equal(percent.lt('5', '6'), true);
-    assert.equal(percent.lt('5%', 6), true);
-    assert.equal(percent.lt([], {}), false);
+describe('percent.lt', () => {
+  let test = percent.lt;
+
+  it('should check is the first argument smaller than second', () => {
+    assert.equal(test(5, 6), true);
+    assert.equal(test('5', '6'), true);
+    assert.equal(test('5%', 6), true);
+    assert.equal(test([], {}), false);
   });
 });
 
-describe('percent.gt', function () {
-  it('should check is the first argument greater than second', function () {
-    assert.equal(percent.gt(6, 5), true);
-    assert.equal(percent.gt('6', '5'), true);
-    assert.equal(percent.gt('6%', 5), true);
-    assert.equal(percent.gt({}, {}), false);
+describe('percent.gt', () => {
+  let test = percent.gt;
+
+  it('should check is the first argument greater than second', () => {
+    assert.equal(test(6, 5), true);
+    assert.equal(test('6', '5'), true);
+    assert.equal(test('6%', 5), true);
+    assert.equal(test({}, {}), false);
   });
 });
 
-describe('percent.eq', function () {
-  it('should check are the arguments equal', function () {
-    assert.equal(percent.eq(5, 5), true);
-    assert.equal(percent.eq('5', '5'), true);
-    assert.equal(percent.eq('5%', 5), true);
-    assert.equal(percent.eq([], []), false);
+describe('percent.eq', () => {
+  let test = percent.eq;
+
+  it('should check are the arguments equal', () => {
+    assert.equal(test(5, 5), true);
+    assert.equal(test('5', '5'), true);
+    assert.equal(test('5%', 5), true);
+    assert.equal(test([], []), false);
   });
 });
 
-describe('percent.neq', function () {
-  it('should check are the arguments unequal', function () {
-    assert.equal(percent.neq(6, 5), true);
-    assert.equal(percent.neq('6', '5'), true);
-    assert.equal(percent.neq('6%', 5), true);
-    assert.equal(percent.neq(/first/g, /second/g), false);
+describe('percent.neq', () => {
+  let test = percent.neq;
+
+  it('should check are the arguments unequal', () => {
+    assert.equal(test(6, 5), true);
+    assert.equal(test('6', '5'), true);
+    assert.equal(test('6%', 5), true);
+    assert.equal(test(/first/g, /second/g), false);
   });
 });
 
-describe('percent.satisfies', function () {
-  it('should check does the value satisfy the given range', function () {
-    assert.equal(percent.satisfies(5.5, 5, 6), true);
-    assert.equal(percent.satisfies('6', '7', '5'), true);
-    assert.equal(percent.satisfies('5.5%', 7, 5), true);
-    assert.equal(percent.satisfies('5.5', 5.5, 5), true);
-    assert.equal(percent.satisfies(5.5, 5.7, 6), false);
-    assert.equal(percent.satisfies([], [], []), false);
+describe('percent.satisfies', () => {
+  let test = percent.satisfies;
+
+  it('should check does the value satisfy the given range', () => {
+    assert.equal(test(5.5, 5, 6), true);
+    assert.equal(test('6', '7', '5'), true);
+    assert.equal(test('5.5%', 7, 5), true);
+    assert.equal(test('5.5', 5.5, 5), true);
+    assert.equal(test(5.5, 5.7, 6), false);
+    assert.equal(test([], [], []), false);
   });
 });

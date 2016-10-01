@@ -1,8 +1,13 @@
 {
   "root": true,
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
   "env": {
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "es6": true
   },
   "rules": {
     "array-callback-return": "error",
@@ -163,6 +168,25 @@
     "space-before-function-paren": "off",
     "space-infix-ops": "error",
     "space-in-parens": "error",
-    "space-unary-ops": "error"
+    "space-unary-ops": "error",
+
+    "arrow-parens": "error",
+    "arrow-spacing": "error",
+    "constructor-super": "error",
+    "generator-star-spacing": "error",
+    "no-class-assign": "error",
+    "no-const-assign": "error",
+    "no-dupe-class-members": "error",
+    "no-new-symbol": "error",
+    "no-this-before-super": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": "off",
+    "prefer-reflect": "off",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "require-yield": "error"
   }
 }

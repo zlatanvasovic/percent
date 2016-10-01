@@ -4,10 +4,12 @@
   "description": "Percent control done right",
   "keywords": [
     "percentage",
+    "matching",
     "math",
     "calc",
     "calculation",
-    "calculator"
+    "calculator",
+    "semver"
   ],
   "version": "1.2.0",
   "license": "MIT",
@@ -24,7 +26,7 @@
     "node": ">=4"
   },
   "devDependencies": {
-    "eslint": "3.6.x",
+    "eslint": "3.7.x",
     "mocha": "3.1.x"
   }
 }

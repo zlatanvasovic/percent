@@ -25,11 +25,11 @@ exports.calc = (value, total, decimal, sign) => {
   }
 
   // Avoid wrong numbers
-  for (let i = 0; i < badNumbers.length; i++) {
-    if ([value, total, decimal].indexOf(badNumbers[i]) > -1) {
-      return badNumbers[i];
+  badNumbers.forEach((number) => {
+    if ([value, total, decimal].indexOf(number) > -1) {
+      return number;
     }
-  }
+  });
 
   // Define the sign
   if (typeof sign !== 'string') {

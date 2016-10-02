@@ -54,7 +54,6 @@
 
     "accessor-pairs": "error",
     "block-scoped-var": "error",
-    "consistent-return": "error",
     "curly": "error",
     "default-case": "error",
     "dot-location": "off",

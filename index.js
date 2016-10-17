@@ -143,9 +143,7 @@ exports.neq = (ne, q) => {
 exports.satisfies = (value, min, max) => {
   // Sort min and max by size
   if (min > max) {
-    let _min = min;
-    min = max;
-    max = _min;
+    [min, max] = [max, min];
   }
 
   if (exports.valid(value) &&

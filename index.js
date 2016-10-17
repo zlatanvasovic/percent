@@ -94,7 +94,7 @@ exports.convert = (value, negative) => {
   value = exports.clean(value);
 
   if (exports.valid(value)) {
-    return negative ? -value : +value;
+    return negative ? -value : value;
   }
 
   return value;

@@ -1,7 +1,7 @@
 # Percent
 
-[![Build Status](https://travis-ci.org/zdroid/percent.svg?branch=master)](https://travis-ci.org/zdroid/percent)
-[![devDependency Status](https://david-dm.org/zdroid/percent/dev-status.svg)](https://david-dm.org/zdroid/percent#info=devDependencies)
+[![Build status](https://travis-ci.org/zdroid/percent.svg?branch=master)](https://travis-ci.org/zdroid/percent)
+[![devDependencies status](https://david-dm.org/zdroid/percent/dev-status.svg)](https://david-dm.org/zdroid/percent?type=dev)
 
 > Percent control done right
 

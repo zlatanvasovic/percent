@@ -73,7 +73,7 @@ Returns supreme percent regexp.
 **Usage:** `percent.valid(value)`  
 **Example:** `percent.valid('5%')`
 
-Checks if `value` is valid percent value. It is valid if it's number,
+Checks if `value` is valid percent value. It is valid if it's a number,
 number-like string (e.g. `'10'`, not `10`), or string with number and percent
 sign. Spaces are allowed in strings.
 

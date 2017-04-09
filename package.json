@@ -25,7 +25,7 @@
     "node": ">=4"
   },
   "devDependencies": {
-    "eslint": "3.14.x",
+    "eslint": "3.19.x",
     "mocha": "3.2.x"
   }
 }

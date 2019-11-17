@@ -7,7 +7,7 @@
  * Percent calculation
  */
 
-exports.calc = (value, total, decimal, sign) => {
+exports.calc = (value, total, decimal, sign = false) => {
   const badNumbers = [NaN, Infinity, -Infinity];
 
   // Avoid argument type problems
@@ -29,12 +29,19 @@ exports.calc = (value, total, decimal, sign) => {
     }
   });
 
-  // Define the sign
-  if (typeof sign !== 'string') {
-    sign = sign ? '%' : '';
+  // Calculate the value
+  value = parseFloat(((value / total) * 100).toFixed(decimal));
+
+  // Add the sign
+  if (sign === true) {
+    value += '%';
   }
 
-  return ((value / total) * 100).toFixed(decimal) + sign;
+  if (typeof sign === 'string') {
+    value += sign;
+  }
+
+  return value;
 };
 
 /*

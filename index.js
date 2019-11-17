@@ -3,8 +3,6 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
-
 /*
  * Percent calculation
  */
@@ -13,9 +11,9 @@ exports.calc = (value, total, decimal, sign) => {
   const badNumbers = [NaN, Infinity, -Infinity];
 
   // Avoid argument type problems
-  if (typeof value !== 'number' ||
-      typeof total !== 'number' ||
-      typeof decimal !== 'number') {
+  if (typeof value !== 'number'
+      || typeof total !== 'number'
+      || typeof decimal !== 'number') {
     return null;
   }
 
@@ -36,7 +34,7 @@ exports.calc = (value, total, decimal, sign) => {
     sign = sign ? '%' : '';
   }
 
-  return (value / total * 100).toFixed(decimal) + sign;
+  return ((value / total) * 100).toFixed(decimal) + sign;
 };
 
 /*
@@ -47,8 +45,8 @@ exports.calc = (value, total, decimal, sign) => {
 exports.re = /^\s?[-+]?(\d*[.|,])*?\d+\s?%?\s?$/;
 
 exports.valid = (value) => {
-  if (typeof value === 'number' ||
-      (typeof value === 'string' && value.match(exports.re))) {
+  if (typeof value === 'number'
+      || (typeof value === 'string' && value.match(exports.re))) {
     return true;
   }
 
@@ -60,8 +58,8 @@ exports.valid = (value) => {
  */
 
 exports.sign = (value) => {
-  if (typeof value === 'number' ||
-      (typeof value === 'string' && !value.match(/%/g))) {
+  if (typeof value === 'number'
+      || (typeof value === 'string' && !value.match(/%/g))) {
     return `${value}%`;
   }
 
@@ -94,6 +92,7 @@ exports.convert = (value, negative) => {
   value = exports.clean(value);
 
   if (exports.valid(value)) {
+    value = Number(value);
     return negative ? -value : value;
   }
 
@@ -105,8 +104,8 @@ exports.convert = (value, negative) => {
  */
 
 exports.lt = (l, t) => {
-  if (exports.valid(l) && exports.valid(t) &&
-      exports.convert(l) < exports.convert(t)) {
+  if (exports.valid(l) && exports.valid(t)
+      && exports.convert(l) < exports.convert(t)) {
     return true;
   }
 
@@ -114,8 +113,8 @@ exports.lt = (l, t) => {
 };
 
 exports.gt = (g, t) => {
-  if (exports.valid(g) && exports.valid(t) &&
-      exports.convert(g) > exports.convert(t)) {
+  if (exports.valid(g) && exports.valid(t)
+      && exports.convert(g) > exports.convert(t)) {
     return true;
   }
 
@@ -123,8 +122,8 @@ exports.gt = (g, t) => {
 };
 
 exports.eq = (e, q) => {
-  if (exports.valid(e) && exports.valid(q) &&
-      exports.convert(e) == exports.convert(q)) {
+  if (exports.valid(e) && exports.valid(q)
+      && exports.convert(e) === exports.convert(q)) {
     return true;
   }
 
@@ -132,8 +131,8 @@ exports.eq = (e, q) => {
 };
 
 exports.neq = (ne, q) => {
-  if (exports.valid(ne) && exports.valid(q) &&
-      exports.convert(ne) != exports.convert(q)) {
+  if (exports.valid(ne) && exports.valid(q)
+      && exports.convert(ne) !== exports.convert(q)) {
     return true;
   }
 
@@ -143,13 +142,13 @@ exports.neq = (ne, q) => {
 exports.satisfies = (value, min, max) => {
   // Sort min and max by size
   if (min > max) {
-    max = [min, min = max][0];
+    [max] = [min, min = max];
   }
 
-  if (exports.valid(value) &&
-      exports.valid(min) && exports.valid(max) &&
-      exports.convert(value) >= exports.convert(min) &&
-      exports.convert(value) <= exports.convert(max)) {
+  if (exports.valid(value)
+      && exports.valid(min) && exports.valid(max)
+      && exports.convert(value) >= exports.convert(min)
+      && exports.convert(value) <= exports.convert(max)) {
     return true;
   }
 

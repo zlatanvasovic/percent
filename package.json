@@ -22,10 +22,12 @@
     "test": "mocha && eslint *.js"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=10"
   },
   "devDependencies": {
-    "eslint": "3.19.x",
-    "mocha": "3.2.x"
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0"
   }
 }

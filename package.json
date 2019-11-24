@@ -22,7 +22,7 @@
     "test": "mocha && eslint *.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=8"
   },
   "devDependencies": {
     "eslint": "^6.1.0",

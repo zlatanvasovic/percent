@@ -1,6 +1,10 @@
 {
   "name": "percent",
-  "author": "Zlatan Vasović",
+  "author": {
+    "name": "Zlatan Vasović",
+    "email": "zlatanvasovic@gmail.com",
+    "url": "https://zdroid.github.io"
+  },
   "description": "Percent control done right",
   "keywords": [
     "percentage",
@@ -11,7 +15,7 @@
     "calculator",
     "semver"
   ],
-  "version": "2.1.0",
+  "version": "2.2.0",
   "license": "MIT",
   "repository": "zdroid/percent",
   "files": [
@@ -27,7 +31,7 @@
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "mocha": "^6.2.0"
+    "eslint-plugin-import": "^2.18.0",
+    "mocha": "^7.0.0"
   }
 }
